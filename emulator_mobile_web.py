@@ -48,7 +48,7 @@ class Android_Mobile_Web_Test(unittest.TestCase):
     def isElementPresent(self, locator):
         try:
             self.driver.find_element_by_name(locator)
-            print 'WE ARE HERE'
+            print 'Element found'
         except NoSuchElementException:
             print ('No such thing')
             return False
@@ -62,11 +62,11 @@ class Android_Mobile_Web_Test(unittest.TestCase):
         driver.get("http://www.facebook.com")
         print "title" + driver.title
         
-        driver.find_element_by_name("email").send_keys("anuvenkatesh@gmail.com")
-        # driver.find_element_by_name("pass").send_keys("mukesh_selenium")
+        driver.find_element_by_name("email").send_keys("something@gmail.com")
+  
         if self.isElementPresent('pass'):
             print 'we are in if'
-            driver.find_element_by_name("pass").send_keys("abi_2007")
+            driver.find_element_by_name("pass").send_keys("fake_pw")
     
         driver.find_element_by_name("login").click()
         
